@@ -1,0 +1,105 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- With the help of JS create a strong password generator application. 
+Design a form to ask the user for the length of the password. If the length 
+is not between 8 and 16 display that “Password length must be between 8 
+and 16 characters. If length is in the range generate a password that 
+contains at least one of each – Upper case letter, lower case letter, number 
+and special character and the password length is what user wants -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-9)</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #1e00ff;
+            border-radius: 10px;
+        }
+        input[type="number"] {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid gray;
+            border-radius: 7px;
+
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #1e00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #1e00ff;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        #password-display {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            word-break: break-all;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Password Generator App</h2>
+        <form id="password-form">
+            <label for="length">Enter The Password Length:</label>
+            <input type="number" id="length" min="8" max="16" placeholder="Enter Length Of Password(8-16):" required>
+            <br>
+            <input type="button" class="btn" value="Generate Password" onclick="generatePassword()">
+            <div id="error-message" class="error"></div>
+            <div id="password-display"></div>
+        </form>
+    </div>
+    <script>
+        function generatePassword() {
+            let length = document.getElementById('length').value;
+            let errorMessage = document.getElementById('error-message');
+            let passwordDisplay = document.getElementById('password-display');
+            errorMessage.innerHTML = '';
+            passwordDisplay.innerHTML = '';
+            if (length < 8 || length > 16) {
+                errorMessage.innerHTML = 'Please Enter Password Length Between(8-16).';
+                return;
+            }
+            let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+            let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let numbers = '0123456789';
+            let specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+            let password = '';
+            password += getRandomChar(lowerCase);
+            password += getRandomChar(upperCase);
+            password += getRandomChar(numbers);
+            password += getRandomChar(specialChars);
+            let allChars = lowerCase + upperCase + numbers + specialChars;
+            for (let i = password.length; i < length; i++) {
+                password += getRandomChar(allChars);
+            }
+            passwordDisplay.innerHTML = `The Password Is : ${password}`
+        }
+        function getRandomChar(str) {
+            return str[Math.floor(Math.random() * str.length)];
+        }
+    </script>
+</body>
+</html>

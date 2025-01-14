@@ -1,0 +1,128 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Design a BMR calculator with the fields Age, Gender, Height (CM), and 
+Weight (KG). Use to following formula to calculate and display the BMR 
+(Calories/day). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-8)</title>
+    <style>
+        .container {
+            height: 500px;
+            width: 400px;
+            margin: auto;
+            padding-top: 100px;
+        }
+
+        .bmr-container {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .bmr-heading {
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        .bmr-data {
+            display: block;
+        }
+
+        .data {
+            margin: 15px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        #btn-submit,
+        #btn-reset {
+            margin: 10px;
+            height: 20px;
+            width: 70px;
+        }
+
+        .result-box {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #bmr-result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post" onsubmit="display(event)" onreset="clearBMR()">
+            <div class="bmr-container">
+
+                <div class="bmr-heading">
+                    <h1>BMR - Calculator</h1>
+                </div>
+                <div class="bmr-data">
+                    <div class="data">
+                        <label for="age">Age:</label>
+                        <input type="number" name="" id="age" required>
+                    </div>
+                    <div class="data">
+                        <label for="gender">Gender:</label>
+                        <input type="radio" name="gender" id="male" value="male" required>Male
+                        <input type="radio" name="gender" id="female" value="female" required>Female
+                    </div>
+                    <div class="data">
+                        <label for="height">Height:</label>
+                        <input type="number" name="" id="height" placeholder="Enter in CM" required>
+                    </div>
+                    <div class="data">
+                        <label for="weight">Weight:</label>
+                        <input type="number" name="" id="weight" placeholder="Enter in KG" required>
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" id="btn-submit" value="Submit">
+                        <input type="reset" id="btn-reset" value="Reset">
+                    </div>
+                    <div class="result-box">
+                        <label id="bmr-result">Your BMR Is: </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function display(e) {
+            e.preventDefault();
+            let age = document.querySelector("#age").value;
+            let height = document.querySelector("#height").value;
+            let weight = document.querySelector("#weight").value;
+            let bmr = 0;
+
+            let gender = document.querySelector("input[name='gender']:checked").value;
+
+            if (gender === "male") {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else if (gender === "female") {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+
+            document.querySelector("#bmr-result").innerHTML = `BMR: ${bmr}`; // I am using toFixed(2) for decimal value upto 2. 
+        }
+        function clearBMR() {
+            document.querySelector("#bmr-result").innerHTML = "BMR: ";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Write a paragraph on the html page and take button to show and hide the paragraph. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-5)</title>
+</head>
+<body>
+    <div class="container">
+        <p id="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, earum distinctio nulla culpa
+            vitae reprehenderit, numquam velit consequatur eos dolore sint sed incidunt fuga ullam rem error omnis
+            quibusdam officia labore? Similique delectus, soluta quidem quibusdam numquam maiores animi expedita autem
+            saepe labore perspiciatis porro sed. Nisi rem harum amet, temporibus, totam eligendi dicta ducimus, ipsum
+            odit ad blanditiis assumenda. Reprehenderit ullam commodi molestias distinctio quibusdam officia illo eius
+            fugit!</p>
+        <button id="btn" onclick="func()">Hide</button>
+    </div>
+    <script>
+        function func(){
+            if (document.querySelector("#btn").innerHTML == "Hide"){
+                document.querySelector("#text").style.display="none";
+                document.querySelector("#btn").innerHTML ="Show";
+            }
+            else{
+                document.querySelector("#text").style.display="";
+                document.querySelector("#btn").innerHTML ="Hide";
+            }
+        }
+    </script>
+</body>
+</html>

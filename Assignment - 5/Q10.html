@@ -1,0 +1,75 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Design an html page with different fields like name (text), gender (radio), 
+dob (date), address (textarea), mobile (text), email (text), Country 
+(dropdown), password and confirm password. Validate each of the fields 
+using external JS. If all the data is valid then the form will be submitted to 
+a thank you page, otherwise not. Use regular expression whenever 
+required -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-10)</title>
+    <link rel="stylesheet" href="Q10.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form action="Q10thankyou.html" method="get" onsubmit="validate(event)">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name">
+            <span class="error" id="nameError"></span>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="male">Male
+            <input type="radio" name="gender" id="female" value="female">Female
+            <input type="radio" name="gender" id="other" value="other">Other
+            <span class="error" id="genderError"></span>
+
+            <label for="dob">D.O.B:</label>
+            <input type="date" name="dob" id="dob">
+            <span class="error" id="dobError"></span>
+
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" placeholder="Enter Correct Address"></textarea>
+            <span class="error" id="addressError"></span>
+
+            <label for="mobile">Mobile:</label>
+            <input type="text" name="mobile" id="mobile" placeholder="Enter Mobile Number">
+            <span class="error" id="mobileError"></span>
+
+            <label for="email">E-Mail:</label>
+            <input type="text" name="email" id="email" placeholder="Enter Your Email Address">
+            <span class="error" id="emailError"></span>
+
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="">-SELECT-</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Srilanka">Srilanka</option>
+                <option value="Nepal">Nepal</option>
+                <option value="China">China</option>
+            </select>
+            <span class="error" id="countryError"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter A Strong Password">
+            <span class="error" id="passwordError"></span>
+
+            <input type="submit" name="submit" id="submit" value="SUBMIT">
+            <!-- <input type="reset" name="reset" id="reset" value="reset"> -->
+        </form>
+    </div>
+    <!-- ----------- SCRIPT -------------  -->
+    <script src="Q10.js"></script>
+</body>
+
+</html>

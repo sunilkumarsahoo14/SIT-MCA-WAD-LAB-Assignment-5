@@ -1,0 +1,38 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Create a circle of 100px and a button displaying “On”. Once click on the 
+button the circle color must change to yellow and the button text must
+change to “Off”. If click again the background of the circle should 
+become white again and button text must change to “On” -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-3)</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <div id="circle" class="circle"
+            style="height: 100px; width: 100px; border: 1px solid black; border-radius: 50%; margin: auto; margin-top: 100px; margin-bottom: 10px;">
+
+        </div>
+        <button id="btn" onclick="func()">On</button>
+    </div>
+    <script>
+        function func() {
+            if ((document.querySelector("#btn").innerHTML) == "On") {
+                document.querySelector("#circle").style.background = "yellow";
+                document.querySelector("#btn").innerHTML = "Off"
+            }
+            else {
+                document.querySelector("#circle").style.background = "white";
+                document.querySelector("#btn").innerHTML = "On"
+            }
+        }
+    </script>
+</body>
+</html>

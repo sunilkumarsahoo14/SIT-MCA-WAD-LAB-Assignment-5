@@ -1,0 +1,45 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Design a theme switcher application using HTML, CSS and JS. Add 
+some headings and paragraph to the HTML page. Create a check box 
+called “Dark” if checked the background of the page must change to 
+black and all text color must change to white. Once unchecked page 
+should get back to default style. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-7)</title>
+</head>
+<body>
+    <!-- Html Part -->
+    <div class="container">
+        <h1>This Is Theme Changer Application</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est quidem cum maiores ab dolore explicabo atque aspernatur reprehenderit maxime.</p>
+        <h2>I am heading 2.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum magni pariatur suscipit necessitatibus rerum!</p>
+        <h4>Theme Change Option Using Checkbox</h4>
+        <div>
+            <input type="checkbox" name="dark" id="dark" value="dark" onclick="darkTheme()">
+            <label for="">Dark Theme</label>
+        </div>
+    </div>
+    <!-- JS Part -->
+     <script>
+        function darkTheme(){
+            if(document.querySelector("#dark").checked){
+                document.body.style.background = "black";
+                document.body.style.color = "white";
+            }
+            else{
+                document.body.style.background = "white";
+                document.body.style.color = "black";
+            }
+        }
+     </script>
+</body>
+</html>

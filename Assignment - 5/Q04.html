@@ -1,0 +1,57 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Create a div with fixed height and width. Create three button with three 
+different color names. Once any button is clicked show a confirmation 
+message and if “Ok” is clicked the background color of the div must be 
+changed to that specific color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q- 4)</title>
+    <style>
+        .container {
+            height: 300px;
+            width: 500px;
+            border: 1px solid black;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 15px;
+        }
+        button{
+            height: 30px;
+            width: 70px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="container">
+    </div>
+    <div style="margin-top: 20px; text-align: center;">
+        <button id="red" onclick="func1()">RED</button>
+        <button id="green" onclick="func2()">GREEN</button>
+        <button id="blue" onclick="func3()">BLUE</button>
+    </div>
+    <script>
+        function func1() {
+            let btnClick = confirm("Do You Really Want To Change The Color?")
+            if(btnClick){
+                document.querySelector("#container").style.background="red";
+            }
+        }
+        function func2() {
+            let btnClick = confirm("Do You Really Want To Change The Color?")
+            document.querySelector("#container").style.background="green";
+        }
+        function func3() {
+            let btnClick = confirm("Do You Really Want To Change The Color?")
+            document.querySelector("#container").style.background="blue";
+        }
+    </script>
+</body>
+</html>

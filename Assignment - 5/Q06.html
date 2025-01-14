@@ -1,0 +1,80 @@
+<!-- Name: Sunil Kumar Sahoo  -->
+<!-- Sic No: 23MMCI38  -->
+<!-- Roll No: 16 (A2)  -->
+
+<!-- Design the following shopping cart counter using input box and buttons. 
++ will increment the value by 1 and – will reduce the value by 1. If the 
+value goes beyond 10 the count value should be displayed in red color. 
+The count should never go below 1. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 5 (Q-6)</title>
+    <style>
+        .counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .counter button {
+            width: 50px;
+            height: 43px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button{
+            border: 1px solid black;
+        }
+        .counter input {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid black;
+        }
+        .red {
+            color: red;
+        }
+        h2{
+            text-align: center;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+<body>
+<h2>Shopping Cart Counter</h2>
+<div class="counter">
+    <button id="decrement" onclick="decrement()">-</button>
+    <input type="text" id="count" value="1" readonly>
+    <button id="increment" onclick="increment()">+</button>
+</div>
+<script>
+    let count = 1;
+    const countInput = document.querySelector('count');
+    function increment() {
+        count++;
+        updateCount();
+    }
+    function decrement() {
+        if (count > 1) {
+            count--;
+        }
+        updateCount();
+    }
+    function updateCount() {
+        countInput.value = count;
+        if (count > 10) {
+            countInput.classList.add('red');
+        } else {
+            countInput.classList.remove('red');
+        }
+    }
+</script>
+</body>
+</html>
